@@ -1,9 +1,5 @@
 #ifndef STROKI_H
 #define STROKI_H
-#include<stdio.h>
-#include<stdbool.h>
-#include<stdlib.h>
-#include<string.h>
 
 //find symb in str
 int str_chr(char *str, char symb); 
