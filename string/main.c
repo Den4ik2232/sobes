@@ -11,7 +11,7 @@ int main(){
 	printf("%d\n", index);
 	index = str_chr(str, symb2);
         printf("%d\n", index);
-	char *stroka1 = "efaeeeeceeeefdefhijef";
+	char *stroka1 = "efaefgeeecegeeefdefhijefg";
 	char *stroka2 = "efg";
 	int index2 = str_str(stroka1, stroka2);
 	printf("%d\n", index2);
