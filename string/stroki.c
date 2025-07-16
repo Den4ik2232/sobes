@@ -1,13 +1,12 @@
 #include"stroki.h"
 
-#include<stdio.h>
-#include<stdbool.h>
 #include<stdlib.h>
 
 //find symb in str
 int str_chr(char *str, char symb){
 	if(str == NULL) return -1;
-	for(int i = 0; str[i] != '\0'; i++){
+	int i;
+	for(i = 0; str[i] != '\0'; i++){
 		if(str[i] == symb)
 			return i;
 	}
@@ -42,17 +41,19 @@ int change_symb(char *str, char a, char b){
 int str_len(char *str){
 	if(str == NULL) return -1;
 	int len = 0;
-	for(int i = 0; str[i] != '\0'; i++){
+	int i;
+	for(i = 0; str[i] != '\0'; i++){
 		len++;
 	}
 	return len;
 }
 //change a to str2 in str1
 char *change_symb_to_str(char *str1, char a, char *str2){
-	int len = str_len(str1) + str_len(str2) + 1;
-	char *str = malloc(len);
+	if(str1 == NULL || str2 == NULL) return NULL;
 	int index = str_chr(str1, a);
-	if(index == -1) return NULL;
+        if(index == -1) return NULL;
+	int len = str_len(str1) + str_len(str2) + 1;
+	char *str = (char *)malloc(len);
 	for(int i = 0; i < str_len(str1); i++){
 		if(i == index){
 			for(int j = 0; j < str_len(str2); j++){
